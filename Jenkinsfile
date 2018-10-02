@@ -37,7 +37,7 @@ spec:
             steps {
                 container('maven') {
                     sh 'mvn -version'
-                    s3Upload( file:'Jenkinsfile', bucket:'stu-cje-backups', path:'test12')
+                    s3Upload( file:'Jenkinsfile', bucket:'stu-cje-backups', path:'test12/Jenkinsfile')
                    
                 }
             }
