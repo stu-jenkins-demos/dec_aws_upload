@@ -37,9 +37,9 @@ spec:
             steps {
                 container('maven') {
                     sh 'mvn -version'
-                
+                    withAWS(region: 'eu-west-1'){
                     s3Upload( file:'Jenkinsfile', bucket:'stu-cje-backups', path:'Jenkinsfile')
-                  
+                    }
                 }
             }
         }
