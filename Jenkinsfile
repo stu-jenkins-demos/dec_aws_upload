@@ -35,12 +35,7 @@ spec:
             steps {
                 container('maven') {
                     sh 'mvn -version'
-                    
-                    /*
-                    pipewithAWS(profile:'Test Publisher') {
-                    //      s3Upload( file:'ok.txt', bucket:'my-buckeck', path:'file.txt')
-                    }
-                */
+                   
                 }
             }
         }
