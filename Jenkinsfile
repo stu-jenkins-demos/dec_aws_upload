@@ -1,11 +1,3 @@
-/*
-pipewithAWS(profile:'Test Publisher') {
-    s3Upload( file:'ok.txt', bucket:'my-buckeck', path:'file.txt')
-
-}
-*/
-
-
 pipeline {
     agent {
         kubernetes {
@@ -36,9 +28,8 @@ spec:
         stage('Run maven') {
             steps {
                 container('maven') {
-                    sh 'mvn -version'
                     withAWS(region: 'eu-west-1'){
-                    s3Upload( file:'Jenkinsfile', bucket:'stu-cje-backups', path:'Jenkinsfile')
+                      s3Upload( file:'Jenkinsfile', bucket:'stu-cje-backups', path:'Jenkinsfile')
                     }
                 }
             }
